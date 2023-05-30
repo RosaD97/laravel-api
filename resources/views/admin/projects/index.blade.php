@@ -16,9 +16,8 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Title</th>
-            <th scope="col">Text</th>
             <th scope="col">Start date</th>
             <th scope="col">Slug</th>
           </tr>
@@ -26,9 +25,8 @@
         <tbody>
             @foreach ($projects as $project)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $project->id}}</th>
                 <td>{{ $project->title}}</td>
-                <td>{{ $project->text}}</td>
                 <td>{{ $project->start_date }}</td>
                 <td>{{ $project->slug}}</td>
                 <td class="d-flex">

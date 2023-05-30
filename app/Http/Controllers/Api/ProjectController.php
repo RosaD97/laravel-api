@@ -21,7 +21,8 @@ class ProjectController extends Controller
 
     public function show(string $slug){
 
-        $project = Project::where('slug', $slug)->with('type', 'technologies')->first();
+        try {
+            $project = Project::where('slug', $slug)->with('type', 'technologies')->first();
 
         if($project){
             return response()->json(
@@ -36,6 +37,16 @@ class ProjectController extends Controller
                     'results' => null
                 ], 404);
         }
+        } catch (\Throwable $th) {
+            return response()->json(
+                [
+                    'success' => false,
+                    'results' => null
+                ], 404);
+
+        }
+
+        
 
 
     }

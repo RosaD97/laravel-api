@@ -20,9 +20,9 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        Schema::disableForeignKeyConstraints();
-        Project::truncate();
-        Schema::enableForeignKeyConstraints();
+         Schema::disableForeignKeyConstraints();
+         Project::truncate();
+         Schema::enableForeignKeyConstraints();
 
         for($i = 0; $i < 10; $i++){
 
