@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TypeController;
 use Illuminate\Http\Request;
@@ -25,4 +26,7 @@ Route::get('project/{slug}', [ProjectController::class, 'show']);
 
 Route::get('types', [TypeController::class, 'index']);
 Route::get('types/{slug}', [TypeController::class, 'show']);
+
+Route::post('messages', [MessageController::class, 'store']);
+
 

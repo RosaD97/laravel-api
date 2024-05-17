@@ -18,4 +18,8 @@ class Project extends Model
     public function technologies() {
         return $this->belongsToMany(Technology::class)->withTimestamps();
     }
+    
+    public function messages() {
+        return $this->hasMany(Message::class);
+    }
 }
